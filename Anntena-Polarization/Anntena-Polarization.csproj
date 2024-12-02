@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>Anntena_Polarization</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ClickableTransparentOverlay" Version="11.0.1" />
+    <PackageReference Include="Emgu.CV" Version="4.9.0.5494" />
+    <PackageReference Include="Emgu.CV.Bitmap" Version="4.9.0.5494" />
+    <PackageReference Include="Emgu.CV.runtime.windows" Version="4.9.0.5494" />
+  </ItemGroup>
+
+</Project>
