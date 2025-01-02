@@ -1,7 +1,7 @@
 # antenna-radiation-mapper
 a simple anntena image to csv mapper
 when buying a new rf anntena the specification/manual of the product most of the time gives you a graph of the polarization
-but not actual datatable of values this attempts to convert an image graph to a csv of magnitude and angle by scaling
+but not actual datatable of values if you want to make digital calculations/estimations this attempts to convert an image graph to a csv of magnitude and angle by scaling
 
 
 ## how to use
