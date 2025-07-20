@@ -25,11 +25,4 @@
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1"/>
         <PackageReference Include="ScottPlot.Avalonia" Version="5.0.55" />
     </ItemGroup>
-
-    <ItemGroup>
-      <Compile Update="Views\ChartDisplay.axaml.cs">
-        <DependentUpon>ChartDisplay.axaml</DependentUpon>
-        <SubType>Code</SubType>
-      </Compile>
-    </ItemGroup>
 </Project>
