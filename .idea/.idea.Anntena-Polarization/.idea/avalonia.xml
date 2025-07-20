@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="PolarizationMapper/App.axaml" value="PolarizationMapper/PolarizationMapper.csproj" />
+        <entry key="PolarizationMapper/ViewModels/ChartDisplay.axaml" value="PolarizationMapper/PolarizationMapper.csproj" />
+        <entry key="PolarizationMapper/Views/MainWindow.axaml" value="PolarizationMapper/PolarizationMapper.csproj" />
+      </map>
+    </option>
+  </component>
+</project>

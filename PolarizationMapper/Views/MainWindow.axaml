@@ -1,0 +1,39 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PolarizationMapper.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="PolarizationMapper.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="PolarizationMapper"
+        RequestedThemeVariant="Dark"
+        >
+        
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+  
+        <Border Name="DropZone"
+                Margin="20"
+                BorderBrush="MediumPurple"
+                CornerRadius="8"
+                Padding="20"
+                Background="#222"
+                BorderThickness="2"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="500"
+                Height="300"
+                IsHitTestVisible="True"
+                DragDrop.AllowDrop="True"
+                DragDrop.DragOver="DragOverHandler"
+                DragDrop.Drop="DropHandler">
+            <TextBlock
+                       Foreground="White" Text="{Binding FilePath}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Border>
+    
+</Window>

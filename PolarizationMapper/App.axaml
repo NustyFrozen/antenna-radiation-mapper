@@ -1,0 +1,23 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="PolarizationMapper.App"
+             xmlns:local="using:PolarizationMapper"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>
+  
+    <Application.Styles>
+        <FluentTheme>
+            <FluentTheme.Palettes>
+                <ColorPaletteResources x:Key="Dark" Accent="#ffc625f7" AltHigh="Black" AltLow="Black" AltMedium="Black" AltMediumHigh="Black" AltMediumLow="Black" BaseHigh="White" BaseLow="#ff751691" BaseMedium="#ffbf89cf" BaseMediumHigh="#ffd1a6de" BaseMediumLow="#ff9a50b0" ChromeAltLow="#ffd1a6de" ChromeBlackHigh="Black" ChromeBlackLow="#ffd1a6de" ChromeBlackMedium="Black" ChromeBlackMediumLow="Black" ChromeDisabledHigh="#ff751691" ChromeDisabledLow="#ffbf89cf" ChromeGray="#ffac6cbf" ChromeHigh="#ffac6cbf" ChromeLow="#ff3b0457" ChromeMedium="#ff4a0965" ChromeMediumLow="#ff671282" ChromeWhite="White" ListLow="#ff4a0965" ListMedium="#ff751691" RegionColor="Black" />
+            </FluentTheme.Palettes>
+        </FluentTheme>
+
+    </Application.Styles>
+             <Application.Resources>
+              
+             </Application.Resources>
+</Application>
