@@ -1,0 +1,54 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:views="clr-namespace:PolarizationMapper.Views"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:scotplot="clr-namespace:ScottPlot.Avalonia;assembly=ScottPlot.Avalonia"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="PolarizationMapper.Views.MainWindow"
+        
+        Icon="/Assets/avalonia-logo.ico"
+        Title="PolarizationMapper"
+        RequestedThemeVariant="Dark"
+        >
+  <Grid ColumnDefinitions="*">
+     
+      <Grid RowDefinitions="*,40,30" Background="{DynamicResource PrimaryBackground}">
+          <scotplot:AvaPlot Name="plotter" PointerMoved="AvaPlot1_MouseMoved" KeyDown="Plotter_OnKeyDown" />
+              <Grid Row="1" ColumnDefinitions="*,*,*" Margin="5,0,5,0"  ColumnSpacing="10"  VerticalAlignment="Top"  x:Name="MapperTools">
+                  <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Set Center"
+                          VerticalAlignment="Stretch"
+                          Click="SetCenter"/>
+                  <Button  HorizontalAlignment="Stretch"
+                           VerticalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Set Scale On Graph"
+                           Grid.Column="1" Click="SetScaleX"/>
+                  <Button HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Begin Mapping" HorizontalAlignment="Stretch"
+                          VerticalAlignment="Stretch"
+                          Grid.Column="2" Click="BeginMapping"/>
+              </Grid>
+<Grid Grid.Row="2" ColumnDefinitions="*,*" ColumnSpacing="10">
+    <TextBox x:Name="StartTextBox" Classes="rounded-purple" Watermark="Set Start" TextChanged="ApplyScaleValue"></TextBox>
+    <TextBox  x:Name="RangeTextBox" Grid.Column="1" Classes="rounded-purple" Watermark="set Range" TextChanged="ApplyScaleValue"></TextBox>
+</Grid>
+
+      </Grid>
+      <Border Name="DropZone"
+              Margin="20"
+              BorderBrush="MediumPurple"
+              CornerRadius="8"
+              Padding="20"
+              Background="#222"
+              BorderThickness="2"
+              HorizontalAlignment="Center"
+              VerticalAlignment="Center"
+              Width="500"
+              Height="300"
+              IsHitTestVisible="True"
+              DragDrop.AllowDrop="True"
+              DragDrop.DragOver="DragOverHandler"
+              DragDrop.Drop="DropHandler">
+          <TextBlock
+              Foreground="White"  x:Name="DropZoneText" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+      </Border>
+  </Grid>
+</Window>

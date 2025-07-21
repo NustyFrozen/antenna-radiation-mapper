@@ -1,0 +1,87 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="PolarizationMapper.App"
+             xmlns:local="using:PolarizationMapper"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+
+  
+    <Application.Styles>
+        <FluentTheme/>
+        <Style Selector="TextBox.rounded-purple">
+            <Setter Property="Background"               Value="{DynamicResource TbBackground}"/>
+            <Setter Property="BorderBrush"              Value="{DynamicResource TbBorderBrush}"/>
+            <Setter Property="BorderThickness"          Value="2"/>
+            <Setter Property="Foreground"  Value="{DynamicResource TbForeground}"/>
+            <Setter Property="CaretBrush"               Value="{DynamicResource TbCaretBrush}"/>
+            <Setter Property="SelectionBrush"           Value="{DynamicResource TbSelectionBrush}"/>
+            <Setter Property="SelectionForegroundBrush" Value="{DynamicResource TbSelectionForegroundBrush}"/>
+            <Setter Property="Padding"                  Value="8,4"/>
+        </Style>
+
+        <!-- 3) Override the internal Border in the TextBox template -->
+        <!--    This is the same trick used in the official Fluent theme docs :contentReference[oaicite:0]{index=0} -->
+        <Style Selector="TextBox.rounded-purple /template/ Border#PART_BorderElement">
+            <Setter Property="CornerRadius"    Value="6"/>
+            <Setter Property="Background"      Value="{DynamicResource TbBackground}"/>
+            <Setter Property="BorderBrush"     Value="{DynamicResource TbBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+
+        <!-- 4) Keep the same look on hover & focus -->
+        <Style Selector="TextBox.rounded-purple:pointerover /template/ Border#PART_BorderElement">
+            <Setter Property="Background"  Value="{DynamicResource TbBackground}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource TbBorderBrush}"/>
+        </Style>
+        <Style Selector="TextBox.rounded-purple:focus /template/ Border#PART_BorderElement">
+            <Setter Property="Background"  Value="{DynamicResource TbBackground}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource TbBorderBrush}"/>
+        </Style>
+        <Style Selector="Button">
+            <!-- colours -->
+            <Setter Property="Background"       Value="{DynamicResource RestoreBg}"/>
+            <Setter Property="Foreground"       Value="White"/>
+            <!-- spacing: 16px on left/right, 6px top/bottom -->
+            <Setter Property="Padding"          Value="16,6"/>
+            
+            <!-- optional: give them a minimum width if you like -->
+            <Setter Property="MinWidth"         Value="100"/>
+            <Setter Property="CornerRadius" Value="4"></Setter>
+        </Style>
+
+        <!-- 3) Round the corners by targeting the inner Border of the Button template -->
+        <Style Selector="Button /template/Border">
+            <Setter Property="CornerRadius"     Value="6"/>
+        </Style>
+        <Style Selector="Button /template/ ContentPresenter">
+            <Setter Property="Transitions">
+                <Transitions>
+                    <BrushTransition Property="Background" Duration="0:0:0.1"></BrushTransition>
+                </Transitions>
+            </Setter>
+        </Style>
+        <!-- 4) Hover / Pressed states -->
+        <Style Selector="Button:pointerover">
+            <Setter Property="Background"       Value="{DynamicResource RestoreBgHover}"/>
+        </Style>
+        <Style Selector="Button:pressed">
+            <Setter Property="Background"       Value="{DynamicResource RestoreBgPressed}"/>
+        </Style>
+    </Application.Styles>
+             <Application.Resources>
+                 <SolidColorBrush x:Key="TbBackground"   Color="#1F2124"/>
+                 <SolidColorBrush x:Key="TbBorderBrush"  Color="#9F7AEA"/>
+                 <SolidColorBrush x:Key="TbForeground"   Color="#FFFFFF"/>
+                 <SolidColorBrush x:Key="TbCaretBrush"   Color="#FFFFFF"/>
+                 <SolidColorBrush x:Key="TbSelectionBrush"           Color="#3F3D7D"/>
+                 <SolidColorBrush x:Key="TbSelectionForegroundBrush" Color="#FFFFFF"/>
+                 <SolidColorBrush x:Key="PrimaryActiveBackground">#252525</SolidColorBrush>
+                 <SolidColorBrush x:Key="PrimaryBackground">#111111</SolidColorBrush>
+                 <SolidColorBrush x:Key="RestoreBg"         Color="#9F7AEA"/>
+                 <!-- a slightly lighter tint for hover -->
+                 <SolidColorBrush x:Key="RestoreBgHover"    Color="#B7A3F2"/>
+                 <!-- a slightly darker shade for pressed -->
+                 <SolidColorBrush x:Key="RestoreBgPressed"  Color="#7D65CD"/>
+             </Application.Resources>
+</Application>
