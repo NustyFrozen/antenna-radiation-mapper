@@ -22,13 +22,12 @@
   <Grid>
       
       <Grid RowDefinitions="*,30,Auto" Background="{DynamicResource PrimaryBackground}">
-          <scotplot:AvaPlot Name="plotter" />
+          <scotplot:AvaPlot Name="plotter" PointerMoved="AvaPlot1_Tapped" />
               <Grid Row="1" ColumnDefinitions="*,*,*,*" Margin="5,0,5,0"  ColumnSpacing="10"  VerticalAlignment="Top"  x:Name="MapperTools">
-                  <Button>Set Center</Button>
-                  <Button Grid.Column="1">Set ScaleX On Graph</Button>
-                  <Button Grid.Column="2">Set ScaleY On Graph</Button>
-                  <Button Grid.Column="3">Begin Mapping</Button>
-             
+                  <Button Click="SetCenter">Set Center</Button>
+                  <Button Grid.Column="1" Click="SetScaleX">Set ScaleX On Graph</Button>
+                  <Button Grid.Column="2" Click="SetScaleY">Set ScaleY On Graph</Button>
+                  <Button Grid.Column="3" Click="BeginMapping">Begin Mapping</Button>
               </Grid>
 
 
