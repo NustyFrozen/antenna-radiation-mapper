@@ -4,7 +4,6 @@ using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using System.Linq;
 using Avalonia.Markup.Xaml;
-using PolarizationMapper.ViewModels;
 using PolarizationMapper.Views;
 
 namespace PolarizationMapper;
@@ -25,7 +24,7 @@ public partial class App : Application
             DisableAvaloniaDataAnnotationValidation();
             desktop.MainWindow = new MainWindow
             {
-                DataContext = new MainWindowViewModel(),
+                
             };
         }
 

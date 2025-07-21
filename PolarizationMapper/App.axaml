@@ -5,12 +5,39 @@
              RequestedThemeVariant="Default">
              <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
-    <Application.DataTemplates>
-        <local:ViewLocator/>
-    </Application.DataTemplates>
+
   
     <Application.Styles>
-       	
+        <FluentTheme/>
+        <Style Selector="TextBox.rounded-purple">
+            <Setter Property="Background"               Value="{DynamicResource TbBackground}"/>
+            <Setter Property="BorderBrush"              Value="{DynamicResource TbBorderBrush}"/>
+            <Setter Property="BorderThickness"          Value="2"/>
+            <Setter Property="Foreground"  Value="{DynamicResource TbForeground}"/>
+            <Setter Property="CaretBrush"               Value="{DynamicResource TbCaretBrush}"/>
+            <Setter Property="SelectionBrush"           Value="{DynamicResource TbSelectionBrush}"/>
+            <Setter Property="SelectionForegroundBrush" Value="{DynamicResource TbSelectionForegroundBrush}"/>
+            <Setter Property="Padding"                  Value="8,4"/>
+        </Style>
+
+        <!-- 3) Override the internal Border in the TextBox template -->
+        <!--    This is the same trick used in the official Fluent theme docs :contentReference[oaicite:0]{index=0} -->
+        <Style Selector="TextBox.rounded-purple /template/ Border#PART_BorderElement">
+            <Setter Property="CornerRadius"    Value="6"/>
+            <Setter Property="Background"      Value="{DynamicResource TbBackground}"/>
+            <Setter Property="BorderBrush"     Value="{DynamicResource TbBorderBrush}"/>
+            <Setter Property="BorderThickness" Value="2"/>
+        </Style>
+
+        <!-- 4) Keep the same look on hover & focus -->
+        <Style Selector="TextBox.rounded-purple:pointerover /template/ Border#PART_BorderElement">
+            <Setter Property="Background"  Value="{DynamicResource TbBackground}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource TbBorderBrush}"/>
+        </Style>
+        <Style Selector="TextBox.rounded-purple:focus /template/ Border#PART_BorderElement">
+            <Setter Property="Background"  Value="{DynamicResource TbBackground}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource TbBorderBrush}"/>
+        </Style>
         <Style Selector="Button">
             <!-- colours -->
             <Setter Property="Background"       Value="{DynamicResource RestoreBg}"/>
@@ -40,35 +67,6 @@
         </Style>
         <Style Selector="Button:pressed">
             <Setter Property="Background"       Value="{DynamicResource RestoreBgPressed}"/>
-        </Style>
-        <Style Selector="TextBox.rounded-purple">
-            <Setter Property="Background"               Value="{DynamicResource TbBackground}"/>
-            <Setter Property="BorderBrush"              Value="{DynamicResource TbBorderBrush}"/>
-            <Setter Property="BorderThickness"          Value="2"/>
-            <Setter Property="Foreground"  Value="{DynamicResource TbForeground}"/>
-            <Setter Property="CaretBrush"               Value="{DynamicResource TbCaretBrush}"/>
-            <Setter Property="SelectionBrush"           Value="{DynamicResource TbSelectionBrush}"/>
-            <Setter Property="SelectionForegroundBrush" Value="{DynamicResource TbSelectionForegroundBrush}"/>
-            <Setter Property="Padding"                  Value="8,4"/>
-        </Style>
-
-        <!-- 3) Override the internal Border in the TextBox template -->
-        <!--    This is the same trick used in the official Fluent theme docs :contentReference[oaicite:0]{index=0} -->
-        <Style Selector="TextBox.rounded-purple /template/ Border#PART_BorderElement">
-            <Setter Property="CornerRadius"    Value="6"/>
-            <Setter Property="Background"      Value="{DynamicResource TbBackground}"/>
-            <Setter Property="BorderBrush"     Value="{DynamicResource TbBorderBrush}"/>
-            <Setter Property="BorderThickness" Value="2"/>
-        </Style>
-
-        <!-- 4) Keep the same look on hover & focus -->
-        <Style Selector="TextBox.rounded-purple:pointerover /template/ Border#PART_BorderElement">
-            <Setter Property="Background"  Value="{DynamicResource TbBackground}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource TbBorderBrush}"/>
-        </Style>
-        <Style Selector="TextBox.rounded-purple:focus /template/ Border#PART_BorderElement">
-            <Setter Property="Background"  Value="{DynamicResource TbBackground}"/>
-            <Setter Property="BorderBrush" Value="{DynamicResource TbBorderBrush}"/>
         </Style>
     </Application.Styles>
              <Application.Resources>

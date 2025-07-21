@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PolarizationMapper")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c4359e95d063a72fb1824f617bb08734e8f9e34")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f197a42147bbeb6ac2152c19608c19cddc4b830")]
 [assembly: System.Reflection.AssemblyProductAttribute("PolarizationMapper")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PolarizationMapper")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

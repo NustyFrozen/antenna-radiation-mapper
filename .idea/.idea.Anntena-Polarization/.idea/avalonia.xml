@@ -9,6 +9,7 @@
         <entry key="PolarizationMapper/Views/MainWindow.axaml" value="PolarizationMapper/PolarizationMapper.csproj" />
         <entry key="PolarizationMapper/Views/MapperView.axaml" value="PolarizationMapper/PolarizationMapper.csproj" />
         <entry key="PolarizationMapper/Views/PolarizerView.axaml" value="PolarizationMapper/PolarizationMapper.csproj" />
+        <entry key="PolarizationMapper/Views/Test.axaml" value="PolarizationMapper/PolarizationMapper.csproj" />
       </map>
     </option>
   </component>
